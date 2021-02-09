@@ -40,15 +40,26 @@ function App() {
           <input className="input" type="number" placeholder="e.q 5"></input>
         </div>
 
-        <button className="button is-danger is-fullwidth">Submit</button>
+        <button className="button is-danger is-fullwidth" type="submit">
+          Submit
+        </button>
 
         <div className="mb-4"></div>
 
         {/* display tables for all persons */}
         <p className="is-4 title has-text-centered">Pet List</p>
-        {/* sample table */}
+        {/* sample table*/}
         <ItemTable name={"Coco"} gender={"Male"} age={"5"} />
-        <p>Your name and code here</p>
+        {localStorage.getItem((items) => {
+          return (
+            <ItemTable
+              name={items.props.name}
+              gender={items.props.gender}
+              age={items.props.age}
+            />
+          );
+        })}
+        <p>Kantika Khampan 620610777</p>
       </div>
     </div>
   );
